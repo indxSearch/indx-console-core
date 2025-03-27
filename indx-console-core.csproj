@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IndxSearchLib" Version="4.0.0-rc02" />
+    <PackageReference Include="IndxSearchLib" Version="4.0.0-rc03" />
   </ItemGroup>
   <ItemGroup Condition="Exists('indx.license')">
     <None Include="indx.license">
