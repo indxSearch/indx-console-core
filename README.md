@@ -6,7 +6,7 @@ The app uses a dataset of TMDBs top 10.000 movie titles. It uses a minimal appro
 
 ![Screenshot](screenshot.png)
 
-**Docs can be found on [docs.indx.co](https://docs.indx.co/apis)**
+**Docs can be found on [docs.indx.co](https://docs.indx.co/csharp-core)**
 
 This app downloads an unlicensed version of IndxSearchLib from [nuget.org](https://www.nuget.org/packages/IndxSearchLib). To register as a developer and extend your license [fill out this form](https://lfut1rkw3es.typeform.com/to/jiN4Z82I)
 
