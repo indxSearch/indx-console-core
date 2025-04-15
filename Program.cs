@@ -13,7 +13,7 @@ namespace IndxConsoleApp
             //
             // CREATE INSTANCE
             //
-            var SearchEngine = new SearchEngine();
+            var engine = new SearchEngine();
             // Load a license like this: new SearchEngine("file.license");
             // Get a developer license on https://indx.co
 
@@ -52,7 +52,7 @@ namespace IndxConsoleApp
                 key++;
             }
 
-            SearchEngine.Insert(documents.ToArray());
+            engine.Insert(documents.ToArray());
             Console.WriteLine($"\rProcessing {fileName} done\n");
 
 
@@ -60,10 +60,10 @@ namespace IndxConsoleApp
             // RUN INDEXING
             //
 
-            SearchEngine.Index();
+            engine.Index();
 
             // Check status if ready to search
-            var status = SearchEngine.Status;
+            var status = engine.Status;
             DateTime startTime = DateTime.Now;
             double timeSpent = 0;
 
@@ -123,7 +123,7 @@ namespace IndxConsoleApp
                 // Search and list results
                 //
 
-                var result = SearchEngine.Search(query);
+                var result = engine.Search(query);
                 int minimumScore = 40; // 0-255
                 int index = 0;
                 Console.WriteLine(""); // space
@@ -154,7 +154,7 @@ namespace IndxConsoleApp
                 var numReps = 100;
                 startTime = DateTime.Now;
                 Parallel.For(1, numReps, i => {
-                    SearchEngine.Search(query);
+                    engine.Search(query);
                 });
                 var timeMs = (DateTime.Now - startTime).TotalMilliseconds / numReps;
                 Console.WriteLine("\nResponse time " + timeMs.ToString("F3") + $" ms ({numReps} reps)");
@@ -163,7 +163,7 @@ namespace IndxConsoleApp
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 Console.WriteLine("Memory used: " + GC.GetTotalMemory(false) / 1024 / 1024 + " MB");
-                Console.WriteLine("Version: " + SearchEngine.Status.Version);
+                Console.WriteLine("Version: " + engine.Status.Version);
 
                 // Continue prompt
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
