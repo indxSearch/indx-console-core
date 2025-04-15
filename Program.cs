@@ -14,6 +14,9 @@ namespace IndxConsoleApp
             // CREATE INSTANCE
             //
             var SearchEngine = new SearchEngine();
+            // Load a license like this: new SearchEngine("file.license");
+            // Get a developer license on https://indx.co
+
 
 
             //
@@ -161,9 +164,6 @@ namespace IndxConsoleApp
                 GC.WaitForPendingFinalizers();
                 Console.WriteLine("Memory used: " + GC.GetTotalMemory(false) / 1024 / 1024 + " MB");
                 Console.WriteLine("Version: " + SearchEngine.Status.Version);
-
-                // Indx License information
-                Console.WriteLine("Valid License: " + SearchEngine.Status.ValidLicense + " / Expires: " + SearchEngine.Status.LicenseExpirationDate.ToShortDateString());
 
                 // Continue prompt
                 Console.ForegroundColor = ConsoleColor.DarkBlue;

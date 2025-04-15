@@ -9,12 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IndxSearchLib" Version="4.0.0-rc03" />
-  </ItemGroup>
-  <ItemGroup Condition="Exists('indx.license')">
-    <None Include="indx.license">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="IndxSearchLib" Version="4.0.0-rc04" />
   </ItemGroup>
 
 </Project>
