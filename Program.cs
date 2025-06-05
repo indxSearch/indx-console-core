@@ -124,12 +124,12 @@ namespace IndxConsoleApp
                 //
 
                 var result = engine.Search(query);
-                int minimumScore = 40; // 0-255
+                int minimumScore = 0; // 0-255
                 int index = 0;
                 Console.WriteLine(""); // space
                 foreach (var record in result.SearchRecords)
                 {
-                    if (record.MetricScore < minimumScore) break;
+                    if (record.Score < minimumScore) break;
 
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.Write($"{index}\t");
